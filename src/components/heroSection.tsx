@@ -92,7 +92,7 @@ export default function HeroSection() {
                                 key={idx}
                                 className="
                                     group relative flex items-center justify-center
-                                    w-full max-w-[320px] sm:max-w-[360px] lg:min-w-[400px]
+                                    w-full max-w-[320px] sm:max-w-[360px] lg:min-w-[380px]
                                     h-[120px] sm:h-[140px] lg:min-h-[160px]
                                     rounded-full overflow-hidden
                                     border border-white/15
