@@ -130,7 +130,7 @@ export default function HeroSection() {
                     </div>
 
                     {/* Subtitle */}
-                    <p className="text-white max-w-3xl text-sm sm:text-lg leading-relaxed text-center mt-4 sm:mt-6 mb-4 sm:mb-6 px-2 font-normal whitespace-nowrap">
+                    <p className="text-white max-w-3xl text-sm sm:text-lg leading-relaxed text-center mt-1 sm:mt-6 mb-4 sm:mb-6 px-2 font-normal whitespace-nowrap">
                         All united by a single mission: to help global businesses get
                         <span className="block font-bold text-white mt-2 text-xs sm:text-base whitespace-nowrap">
                             &quot;highest quality products at the best possible price&quot;

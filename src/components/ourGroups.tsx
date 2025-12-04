@@ -86,7 +86,7 @@ export default function OurGroup() {
                                 alt={company.name}
                                 width={290}
                                 height={120}
-                                className="object-contain drop-shadow-lg scale-123"
+                                className="object-contain drop-shadow-lg scale-106 md:scale-123"
                             />
 
                             {/* Logo màu khi hover */}

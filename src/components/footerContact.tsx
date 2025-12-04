@@ -23,6 +23,12 @@ const contacts = [
         contact: "Tom Daniels",
     },
     {
+        name: "OneLink Marketing",
+        flag: "/assets/Country Flag/Rectangle 22.png",
+        email: "Neil@onelinkmarketing.com",
+        contact: "Neil Cartwright",
+    },
+    {
         name: "ModularLink",
         flag: "/assets/Country Flag/Rectangle 23.png",
         email: "sam@onelinkholdings.com",
@@ -33,7 +39,7 @@ const contacts = [
 export default function FooterContact() {
     return (
         <footer id="contact" className="bg-white py-8">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Title */}
                 <div className="text-center mb-12">
                     <h3
@@ -61,7 +67,7 @@ export default function FooterContact() {
                     </h3>
                 </div>
                 {/* Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-10 text-base mt-12">
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-10 text-base mt-12">
                     {contacts.map((item, i) => (
                         <div
                             key={i}
@@ -79,7 +85,7 @@ export default function FooterContact() {
                                     {item.name}
                                 </h4>
 
-                                <div className="ml-4 w-12 h-8 relative flex-shrink-0">
+                                <div className="ml-3 w-12 h-8 relative flex-shrink-0">
                                     <Image
                                         src={item.flag}
                                         alt={`${item.name} flag`}
@@ -87,6 +93,7 @@ export default function FooterContact() {
                                         className="object-contain rounded-xl bg-white"
                                     />
                                 </div>
+
 
                             </div>
 
