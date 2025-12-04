@@ -49,7 +49,7 @@ export default function HeroSection() {
             {/* Background video */}
             <video
                 className="absolute inset-0 w-full h-full object-cover"
-                src="/assets/Freepik_Video_4237696.mov"
+                src="/assets/Hero OLH.mp4"
                 autoPlay
                 muted
                 loop
