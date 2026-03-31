@@ -1,15 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const HUBSPOT_ACCESS_TOKEN = process.env.HUBSPOT_ACCESS_TOKEN;
-// ✅ Thay đổi URL từ create endpoint sang batch upsert endpoint
-const HUBSPOT_API_URL = 'https://api.hubapi.com/crm/v3/objects/contacts/batch/upsert';
+const HUBSPOT_PORTAL_ID = '46681098';
+const HUBSPOT_FORM_ID = 'bc68d211-1b15-44fc-9f71-088c75809742';
+const HUBSPOT_API_URL = `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_ID}`;
 
 export async function POST(request: NextRequest) {
     try {
         const body = await request.json();
         const { firstname, email, phone, company, website, message } = body;
 
-        // Validate required fields
         if (!email || !firstname) {
             return NextResponse.json(
                 { success: false, error: 'Email và tên là bắt buộc' },
@@ -17,49 +16,33 @@ export async function POST(request: NextRequest) {
             );
         }
 
-        
         const hubspotData = {
-            inputs: [{
-                idProperty: "email",    
-                id: email,              
-                properties: {
-                    email: email,
-                    firstname: firstname,
-                    ...(phone && { phone: phone }),
-                    ...(company && { company: company }),
-                    ...(website && { website: website }),
-                    ...(message && { message: message }),
-                }
-            }]
+            fields: [
+                { name: 'firstname', value: firstname },
+                { name: 'email', value: email },
+                ...(phone ? [{ name: 'phone', value: phone }] : []),
+                ...(company ? [{ name: 'company', value: company }] : []),
+                ...(website ? [{ name: 'website', value: website }] : []),
+                ...(message ? [{ name: 'message', value: message }] : []),
+            ],
+            context: {
+                pageUri: request.headers.get('referer') || '',
+                pageName: 'Contact Form',
+            },
         };
 
-        console.log('Sending to HubSpot Upsert:', JSON.stringify(hubspotData, null, 2));
-
-        // Send to HubSpot
         const hubspotResponse = await fetch(HUBSPOT_API_URL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${HUBSPOT_ACCESS_TOKEN}`,
             },
             body: JSON.stringify(hubspotData),
         });
 
         const hubspotResult = await hubspotResponse.json();
-        console.log('HubSpot Response:', hubspotResult);
 
         if (hubspotResponse.ok) {
-            // ✅ Upsert endpoint trả về array results
-            const contact = hubspotResult.results?.[0];
-            const isNewContact = contact?.new || false;
-            const action = isNewContact ? 'created' : 'updated';
-            
-            return NextResponse.json({ 
-                success: true, 
-                data: contact,
-                message: `Contact ${action} successfully`,
-                isNew: isNewContact
-            });
+            return NextResponse.json({ success: true, data: hubspotResult });
         } else {
             console.error('HubSpot API Error:', hubspotResult);
             return NextResponse.json(
