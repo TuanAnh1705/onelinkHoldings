@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
 
         if (!email || !firstname) {
             return NextResponse.json(
-                { success: false, error: 'Email và tên là bắt buộc' },
+                { success: false, error: 'Email and name are required.' },
                 { status: 400 }
             );
         }
@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
         } else {
             console.error('HubSpot API Error:', hubspotResult);
             return NextResponse.json(
-                { success: false, error: hubspotResult.message || 'Lỗi từ HubSpot API' },
+                { success: false, error: hubspotResult.message || 'Error from HubSpot API' },
                 { status: 400 }
             );
         }
@@ -54,7 +54,7 @@ export async function POST(request: NextRequest) {
     } catch (error) {
         console.error('Server Error:', error);
         return NextResponse.json(
-            { success: false, error: 'Lỗi server internal' },
+            { success: false, error: 'Internal server error' },
             { status: 500 }
         );
     }

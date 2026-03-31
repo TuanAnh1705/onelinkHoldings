@@ -150,13 +150,13 @@ export default function ContactSection() {
                             {/* ✅ Thêm status messages */}
                             {submitStatus === 'success' && (
                                 <div className="mt-4 p-4 bg-green-500/20 border border-green-500/50 rounded-lg text-green-300">
-                                    Cảm ơn bạn! Thông tin đã được gửi thành công.
+                                    Thank you! The information has been successfully sent.
                                 </div>
                             )}
 
                             {submitStatus === 'error' && (
                                 <div className="mt-4 p-4 bg-red-500/20 border border-red-500/50 rounded-lg text-red-300">
-                                    Có lỗi xảy ra. Vui lòng thử lại sau.
+                                    An error occurred. Please try again later.
                                 </div>
                             )}
                         </div>
@@ -258,7 +258,7 @@ export default function ContactSection() {
                                         disabled={isSubmitting}
                                         className="relative z-10 px-10 py-4 rounded-full bg-[#002C80] text-white font-semibold flex items-center justify-center gap-2 h-16 text-[22px] transition-colors duration-300 hover:bg-[#0040C1] disabled:opacity-50"
                                     >
-                                        {isSubmitting ? 'Đang gửi...' : 'Submit'}
+                                        {isSubmitting ? 'Sending...' : 'Submit'}
                                         <MousePointerClick className="w-6 h-6" />
                                         <span className="absolute inset-0 rounded-full border border-white/30 pointer-events-none" />
                                     </Button>
