@@ -46,7 +46,7 @@ export default function ContactSection() {
         setSubmitStatus(null);
 
         try {
-            const response = await fetch('https://onelinkholdings.com/api/hubspot.php', {
+            const response = await fetch('/api/hubspot-contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
