@@ -7,9 +7,9 @@ import NavBar from "./NavBar"
 
 export default function HeroSection() {
     const logos = [
-    { src: "/assets/Logo/cns-white.png", alt: "China Sourcing" },
-    { src: "/assets/Logo/vns-white.png", alt: "Vietnam Sourcing" },
-    { src: "/assets/Logo/OLMA WHITE 1.png", alt: "Onelink Marketing" },
+    { src: "/assets/Logo/cns-white.png", alt: "China Sourcing", url: "https://chinasourcing.co" },
+    { src: "/assets/Logo/vns-white.png", alt: "Vietnam Sourcing", url: "https://vietnamsourcing.co" },
+    { src: "/assets/Logo/OLMA WHITE 1.png", alt: "Onelink Marketing", url: "https://onelinkmarketing.com" },
     { src: "/assets/Logo/modul-white.png", alt: "Modular Link" },
 ]
 
@@ -87,46 +87,54 @@ export default function HeroSection() {
                 <div className="flex flex-col items-center mt-10 sm:mt-24 lg:mt-32">
                     {/* 3 con nhộng liquid glass */}
                     <div className="flex flex-col lg:flex-row justify-center items-center gap-8 sm:gap-10 lg:gap-12 mb-8 sm:mb-10 lg:mb-12">
-                        {logos.map((logo, idx) => (
-                            <div
-                                key={idx}
-                                className="
-                                    group relative flex items-center justify-center
-                                    w-full max-w-[320px] sm:max-w-[360px] lg:min-w-[340px]
-                                    h-[120px] sm:h-[140px] lg:min-h-[160px]
-                                    rounded-full overflow-hidden
-                                    border border-white/15
-                                    shadow-[inset_0_0_14px_rgba(255,255,255,0.25),0_8px_22px_rgba(0,0,0,0.35)]
-                                    transition-all duration-500
-                                    hover:scale-105
-                                    hover:shadow-[0_0_15px_4px_rgba(255,255,255,0.35),0_6px_16px_rgba(0,0,0,0.45)]
-                                "
-                            >
-                                {/* nền phóng to phần background phía sau */}
-                                <div
-                                    className="absolute inset-0"
-                                    style={{
-                                        backgroundImage: "url('/assets/Freepik_Video_4237696.mov')",
-                                        backgroundSize: "cover",
-                                        backgroundPosition: "center",
-                                        transform: "scale(5.0)",
-                                        filter: "blur(3px) brightness(1.25) contrast(1.25)",
-                                    }}
-                                />
+                        {logos.map((logo, idx) => {
+                            const Tag = logo.url ? "a" : "div"
+                            const linkProps = logo.url
+                                ? { href: logo.url, target: "_blank", rel: "noopener noreferrer" }
+                                : {}
+                            return (
+                                <Tag
+                                    key={idx}
+                                    {...linkProps}
+                                    className="
+                                        group relative flex items-center justify-center
+                                        w-full max-w-[320px] sm:max-w-[360px] lg:min-w-[340px]
+                                        h-[120px] sm:h-[140px] lg:min-h-[160px]
+                                        rounded-full overflow-hidden
+                                        border border-white/15
+                                        shadow-[inset_0_0_14px_rgba(255,255,255,0.25),0_8px_22px_rgba(0,0,0,0.35)]
+                                        transition-all duration-500
+                                        hover:scale-105
+                                        hover:shadow-[0_0_15px_4px_rgba(255,255,255,0.35),0_6px_16px_rgba(0,0,0,0.45)]
+                                        cursor-pointer
+                                    "
+                                >
+                                    {/* nền phóng to phần background phía sau */}
+                                    <div
+                                        className="absolute inset-0"
+                                        style={{
+                                            backgroundImage: "url('/assets/Freepik_Video_4237696.mov')",
+                                            backgroundSize: "cover",
+                                            backgroundPosition: "center",
+                                            transform: "scale(5.0)",
+                                            filter: "blur(3px) brightness(1.25) contrast(1.25)",
+                                        }}
+                                    />
 
-                                {/* lớp kính mờ */}
-                                <div className="absolute inset-0 bg-white/10 backdrop-blur-xs rounded-full" />
+                                    {/* lớp kính mờ */}
+                                    <div className="absolute inset-0 bg-white/10 backdrop-blur-xs rounded-full" />
 
-                                {/* logo */}
-                                <Image
-                                    src={logo.src}
-                                    alt={logo.alt}
-                                    width={300}
-                                    height={100}
-                                    className="relative z-10 object-contain max-w-[90%] max-h-[90%]"
-                                />
-                            </div>
-                        ))}
+                                    {/* logo */}
+                                    <Image
+                                        src={logo.src}
+                                        alt={logo.alt}
+                                        width={300}
+                                        height={100}
+                                        className="relative z-10 object-contain max-w-[90%] max-h-[90%]"
+                                    />
+                                </Tag>
+                            )
+                        })}
                     </div>
 
                     {/* Subtitle */}
