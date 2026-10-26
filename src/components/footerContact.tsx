@@ -11,6 +11,12 @@ const contacts = [
         contact: "Sam Sheehan",
     },
     {
+        name: "OneLink Construction",
+        flag: "/assets/Country Flag/Rectangle 23.png",
+        email: "sam@olco.com.au",
+        contact: "Sam Sheehan",
+    },
+    {
         name: "China Sourcing Co",
         flag: "/assets/Country Flag/Rectangle 20.png",
         email: "bheki@chinasourcing.co",
@@ -27,12 +33,6 @@ const contacts = [
         flag: "/assets/Country Flag/Rectangle 22.png",
         email: "Neil@onelinkmarketing.com",
         contact: "Neil Cartwright",
-    },
-    {
-        name: "OneLink Construction",
-        flag: "/assets/Country Flag/Rectangle 23.png",
-        email: "sam@olco.com.au",
-        contact: "Sam Sheehan",
     },
 ];
 

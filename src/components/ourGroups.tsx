@@ -6,10 +6,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const companies = [
     {
-        name: "Vietnam Sourcing",
-        logo: "/assets/New/New/Group 2-1.png",
-        hoverImage: "/assets/Main 3 brands/Group 10.png",
-        url: "https://vietnamsourcing.co",
+        name: "OneLink Construction",
+        logo: "/assets/New/New/OneLink Construction.png",
+        hoverImage: "/assets/Main 3 brands/OneLink Construction.png",
+        url: "https://olco.com.au",
     },
     {
         name: "China Sourcing",
@@ -18,16 +18,16 @@ const companies = [
         url: "https://chinasourcing.co",
     },
     {
+        name: "Vietnam Sourcing",
+        logo: "/assets/New/New/Group 2-1.png",
+        hoverImage: "/assets/Main 3 brands/Group 10.png",
+        url: "https://vietnamsourcing.co",
+    },
+    {
         name: "Onelink Marketing",
         logo: "/assets/New/New/OneLink Marketing.png",
         hoverImage: "/assets/Main 3 brands/Group 12.png",
         url: "https://onelinkmarketing.com",
-    },
-    {
-        name: "OneLink Construction",
-        logo: "/assets/New/New/OneLink Construction.png",
-        hoverImage: "/assets/Main 3 brands/OneLink Construction.png",
-        url: "https://olco.com.au",
     },
 ];
 

@@ -7,10 +7,10 @@ import NavBar from "./NavBar"
 
 export default function HeroSection() {
     const logos = [
+    { src: "/assets/Logo/olco-white.png", alt: "OneLink Construction", url: "https://olco.com.au" },
     { src: "/assets/Logo/cns-white.png", alt: "China Sourcing", url: "https://chinasourcing.co" },
     { src: "/assets/Logo/vns-white.png", alt: "Vietnam Sourcing", url: "https://vietnamsourcing.co" },
     { src: "/assets/Logo/OLMA WHITE 1.png", alt: "Onelink Marketing", url: "https://onelinkmarketing.com" },
-    { src: "/assets/Logo/olco-white.png", alt: "OneLink Construction", url: "https://olco.com.au" },
 ]
 
     const isAnimating = useRef(false)
