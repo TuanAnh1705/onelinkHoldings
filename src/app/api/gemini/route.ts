@@ -65,7 +65,7 @@ export async function POST(req: NextRequest) {
         - Contact: Tom Daniels
         - Email: tom@vietnamsourcing.co
 
-        ModularLink
+        OneLink Construction (OLCO) - https://olco.com.au
         - Contact: Sam Sheehan
         - Email: sam@onelinkholdings.com
 

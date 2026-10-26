@@ -29,7 +29,7 @@ const contacts = [
         contact: "Neil Cartwright",
     },
     {
-        name: "ModularLink",
+        name: "OneLink Construction",
         flag: "/assets/Country Flag/Rectangle 23.png",
         email: "sam@onelinkholdings.com",
         contact: "Sam Sheehan",
@@ -39,7 +39,7 @@ const contacts = [
 export default function FooterContact() {
     return (
         <footer id="contact" className="bg-white py-8">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Title */}
                 <div className="text-center mb-12">
                     <h3
@@ -67,25 +67,25 @@ export default function FooterContact() {
                     </h3>
                 </div>
                 {/* Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-10 text-base mt-12">
+                <div className="w-fit mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[repeat(5,auto)] gap-x-12 lg:gap-x-0 gap-y-12 text-lg lg:text-[clamp(11px,1.18vw,19.5px)] mt-12">
                     {contacts.map((item, i) => (
                         <div
                             key={i}
                             className={`relative ${i !== contacts.length - 1
-                                ? "md:border-r-2 md:border-[#007AFF]"
+                                ? "lg:border-r-2 lg:border-[#007AFF]"
                                 : ""
-                                } pr-10`}
+                                } lg:px-[clamp(10px,1.3vw,28px)]`}
                         >
                             {/* Company + Flag */}
-                            <div className="flex items-center mb-4">
+                            <div className="flex items-center gap-[0.5em] mb-4">
                                 <h4
-                                    className="text-gray-800 font-semibold text-sm md:text-base whitespace-nowrap"
+                                    className="text-gray-800 font-semibold whitespace-nowrap text-[1.15em]"
                                     style={{ fontFamily: "SF Pro Display, sans-serif" }}
                                 >
                                     {item.name}
                                 </h4>
 
-                                <div className="ml-3 w-12 h-8 relative flex-shrink-0">
+                                <div className="w-[2.4em] h-[1.65em] relative flex-shrink-0">
                                     <Image
                                         src={item.flag}
                                         alt={`${item.name} flag`}
@@ -116,7 +116,7 @@ export default function FooterContact() {
                                     Email:
                                 </span>
                             </div>
-                            <p className="mb-3 text-gray-600">{item.email}</p>
+                            <p className="mb-3 text-gray-600 whitespace-nowrap">{item.email}</p>
 
                             {/* Contact Point */}
                             <div className="flex items-center mb-1">

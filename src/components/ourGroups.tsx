@@ -24,9 +24,10 @@ const companies = [
         url: "https://onelinkmarketing.com",
     },
     {
-        name: "ModularLink",
-        logo: "/assets/New/New/Group 2.png",
-        hoverImage: "/assets/Main 3 brands/Group 11.png",
+        name: "OneLink Construction",
+        logo: "/assets/New/New/OneLink Construction.png",
+        hoverImage: "/assets/Main 3 brands/OneLink Construction.png",
+        url: "https://olco.com.au",
     },
 ];
 
