@@ -31,7 +31,7 @@ const contacts = [
     {
         name: "OneLink Construction",
         flag: "/assets/Country Flag/Rectangle 23.png",
-        email: "sam@onelinkholdings.com",
+        email: "sam@olco.com.au",
         contact: "Sam Sheehan",
     },
 ];

@@ -67,7 +67,7 @@ export async function POST(req: NextRequest) {
 
         OneLink Construction (OLCO) - https://olco.com.au
         - Contact: Sam Sheehan
-        - Email: sam@onelinkholdings.com
+        - Email: sam@olco.com.au
 
         ============================
         Your Role as AI Assistant:
